@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+add_definitions("-std=c++1y")
 
 add_executable(a src/a.cpp)
 add_executable(b src/b.cpp)
