@@ -8,3 +8,15 @@ def divisors(x):
                 divisors.append(x / i)
         i += 1
     return divisors
+
+def isPrime(x):
+    if x == 2:
+        return True
+    elif x % 2 == 0 or x < 0:
+        return False
+    i = 3
+    while i * i <= x:
+        if x % i == 0:
+            return False
+        i += 2
+    return True
