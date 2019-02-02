@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using lint = long long;
+
+#define REP(i,n)    for(int i=0, i##_len=(n); i<i##_len; ++i)
+#define RREP(i,n)   for(int i=((int)(n)-1);   i>=0; --i)
+#define FOR(i,a,n)  for(int i=(a), i##_len=(n); i<i##_len; ++i)
+
+#define EPS 1e-6;
+
+template<class T>bool chMax(T &a, const T &b) { if (a<b) { a=b; return 1; } return 0; }
+template<class T>bool chMin(T &a, const T &b) { if (b<a) { a=b; return 1; } return 0; }
+
+#define DIVNUM 998244353
+
+/// Ax + By + (A + B)z = K
+/// x + y + z <= N
+
+// (x + z)A + (y + z)B = K
+
+// (A + B)N - Kを求め，できるだけmin(A, B)に置換してKとする
+
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int N, A, B;
+    lint K;
+
+    cin >> N >> A >> B >> K;
+
+
+
+    return 0;
+}
