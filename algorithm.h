@@ -18,3 +18,41 @@ T gcd(T a, T b)
     }
     return ret;
 }
+
+template<typename type>
+class UnionFindTree
+{
+  private:
+    vector<type> parent;
+    vector<type> rank;
+
+  public:
+    UnionFindTree(type size) {
+        parent.resize(size);
+        rank.resize(size, 0);
+        for (type i = 0; i < size; ++i) {
+            parent[i] = i;
+        }
+    }
+
+    type findRoot(type x) {
+        if (parent[x] == x) return x;
+        else return parent[x] = findRoot(parent[x]);
+    }
+
+    void uniteTwoGroups(type x, type y) {
+        x = findRoot(x);
+        y = findRoot(y);
+        if (x == y) return;
+
+        if (rank[x] < rank[y]) parent[x] = y;
+        else {
+            parent[y] = x;
+            if (rank[x] == rank[y]) ++rank[x];
+        }
+    }
+
+    bool areSameGroup(type x, type y) {
+        return findRoot(x) == findRoot(y);
+    }
+};
