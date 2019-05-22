@@ -1,10 +1,10 @@
 # make all sources under ./src respectively
-CC      = g++
-CFLAGS  = -g -MMD -MP
+CC      = c++
+CFLAGS  = -g -MMD -MP -std=c++14
 LDFLAGS =
 LIBS    =
 INCLUDE = -I ./include
-SRC_DIR = ./src
+SRC_DIR = ./
 OBJ_DIR = ./build
 BIN_DIR = ./bin
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)

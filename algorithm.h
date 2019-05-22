@@ -52,7 +52,7 @@ class UnionFindTree
         }
     }
 
-    bool areSameGroup(type x, type y) {
+    bool areSameGroups(type x, type y) {
         return findRoot(x) == findRoot(y);
     }
 };
