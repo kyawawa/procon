@@ -19,6 +19,36 @@ T gcd(T a, T b)
     return ret;
 }
 
+long long modPow(long long x, long long n, const long long MOD)
+{
+    long long ans = 1;
+    while (n != 0) {
+        if (n & 1) ans = ans * x % MOD;
+        x = x * x % MOD;
+        n = n >> 1;
+    }
+    return ans;
+}
+
+long long modFact(const long long n, const long long MOD)
+{
+    long long fac = 1;
+    for (long long i = 1; i <= n; ++i) {
+        fac *= i;
+        fac %= MOD;
+    }
+    return fac;
+}
+
+long long modComb(const long long n, long long r, const long long MOD)
+{
+    if (n < r || n < 0) return 0;
+    if (r * 2 > n) r = n - r;
+
+    return ((modFact(n, MOD) * modPow(modFact(r, MOD), MOD - 2, MOD) % MOD)
+            * modPow(modFact(n - r, MOD), MOD - 2, MOD)) % MOD;
+}
+
 template<typename type>
 class UnionFindTree
 {
