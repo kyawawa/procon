@@ -30,6 +30,16 @@ long long modPow(long long x, long long n, const long long MOD)
     return ans;
 }
 
+long long modPerm(const long long n, const long long k, const long long MOD)
+{
+    long long per = 1;
+    for (long long i = 0; i < k; ++i) {
+        per *= (n - i);
+        per %= MOD;
+    }
+    return per;
+}
+
 long long modFact(const long long n, const long long MOD)
 {
     long long fac = 1;
